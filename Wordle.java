@@ -18,6 +18,8 @@ public class Wordle
       wordleScanner.next();
     }
     WORD = wordleScanner.next();
+    // JUST FOR TESTING! REMOVE THIS LINE AFTER!!
     System.out.println(lineNum + " " + WORD);
+    // JUST FOR TESTING! REMOVE THIS LINE AFTER!!
   }
 }
