@@ -10,6 +10,9 @@ public class Wordle
   private int guesses;
   private Instant time;
 
+  /* Todo: System.getProperty(user.name); use that to create a file without asking (If it doesnt exist already) and then store info.
+  * If the  
+  */  
   public Wordle()
   {
     // Save the time, we'll store it in a file soon
