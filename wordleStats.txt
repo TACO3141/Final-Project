@@ -1,1 +1,13 @@
-
+currentGame true
+{
+secretWord scrambledword
+guesses 3
+{
+1 guess
+2 guess
+3 guess
+}
+timeLast 123:456:789
+}
+time 123:456:789
+streak 0
