@@ -20,6 +20,7 @@ public class Wordle
   * lets also do one where if its a current game in progress ("currentGame = true" in the file), then the game will continue with the stored word and guesses.
   * If currentGame = false, then the currentGame info will be deleted, making sure that there is no more info there.
   * The word selected will be stored and encrypted by some sort of very simple cypher, where the letters are shifted over by 2 places or something.
+  * Make a cypher class that can encrypt() or unencrypt()
   */
   public Wordle()
   {
