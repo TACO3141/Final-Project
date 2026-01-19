@@ -9,12 +9,15 @@ public class Wordle
   private final String WORD;
   private int guesses;
   private Instant time;
-
-  /* Todo: System.getProperty(user.name); use that to create a file without asking (If it doesnt exist already) and then store info.
-  * If the  
-  */  
+  
+  /* Todo: create a file after asking for pathname (If it doesnt exist already) and then store info.
+  * If the file exists, say welcome back and check if time is over 24 hours since last game.
+  * Lets do streaks too, where the program will check if its been over 24 hours since last game, and if it does it sets streaks to 0 and informs the user that their streak was broken.
+  */
   public Wordle()
   {
+    // I'm just trying this, lets see if it works or if it gives me some problems.
+    File info = new File()
     // Save the time, we'll store it in a file soon
     time = Instant.now();
     // take the scanner to scan the wordlist file, go down to the line you want (random) and then take that word.
