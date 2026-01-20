@@ -36,11 +36,8 @@ public class Wordle
 				try
 				{
 					infoCreated = info.createNewFile();
-					if (infoCreated)
-					{
-						System.out.println("Welcome to wordle! This is your first game. Lets go!");
-						// write to the file here
-					}
+					System.out.println("Welcome to wordle! This is your first game. Lets go!");
+					// write to the file here
 				}
 				catch (Exception e) // Generic exception catch, likely a security exception
 				{
@@ -66,6 +63,7 @@ public class Wordle
 				word = wordFinder.readLine();
 			}
 			word = wordFinder.readLine();
+			wordFinder.close();
 		}
 		catch (Exception e)
 		{
