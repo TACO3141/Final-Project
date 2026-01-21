@@ -28,16 +28,16 @@ public class Wordle
 		File info = new File("C:\\Users\\" + System.getProperty("user.name") + "\\Wordle\\wordleStats.txt"); // Create a file object for stats document
 		boolean folderCreated;
 		boolean infoCreated;
-		try
+		try 
 		{
-			folderCreated = folder.mkdir();
+			folderCreated = folder.mkdir(); // try and create folder, if folder didn't exist and was just created:
 			if (folderCreated)
 			{
 				try
 				{
 					infoCreated = info.createNewFile();
-					System.out.println("Welcome to wordle! This is your first game. Lets go!");
-					// write to the file here
+					System.out.println("Welcome to wordle! This is your first game. Lets go!"); // Create a new info file and welcome the user.
+					// write to file
 				}
 				catch (Exception e) // Generic exception catch, likely a security exception
 				{
