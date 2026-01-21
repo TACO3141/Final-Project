@@ -35,10 +35,10 @@ public class Wordle
 				try
 				{
 					infoCreated = info.createNewFile();
-					System.out.println("Welcome to wordle! This is your first game. Lets go!"); // Create a new info file and welcome the user.
+					System.out.println("Welcome to wordle! This is your first game. Lets go!"); // Create a new info file and welcome the user
 					// write to file
 				}
-				catch (Exception e) // Generic exception catch, likely a security exception
+				catch (Exception e) // Generic exception catch, likely a security exception so we ask for run as admin
 				{
 					System.out.println("Sorry, an error occured. Please try running the program again. If that doesn\'t work, reinstall the program and try running as administrator.");
 				}
@@ -50,7 +50,7 @@ public class Wordle
 		}
 		  
 		time = Instant.now(); // Save the time, we'll store it in a file soon
-
+		// time.getLong(ChronoField.INSTANT_SECONDS);
 		
 		int lineNum = (int) Math.round((Math.random() * 14854) + 1.5);
 		try
