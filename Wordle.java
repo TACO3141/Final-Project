@@ -57,12 +57,12 @@ public class Wordle
 		try
 		{
 			File wordList = new File("wordList.txt"); 
-			BufferedReader wordFinder = new BufferedReader(new FileReader("wordList.txt"));
+			Scanner wordFinder = new Scanner(wordList);
 			for (int i = 0; i < lineNum - 1; i++)
 			{
-				word = wordFinder.readLine();
+				word = wordFinder.nextLine();
 			}
-			word = wordFinder.readLine();
+			word = wordFinder.nextLine();
 			wordFinder.close();
 		}
 		catch (Exception e)
