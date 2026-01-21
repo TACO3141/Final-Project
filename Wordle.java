@@ -1,5 +1,4 @@
 // keeping this here: 🟩🟨⬛ (1 possible way to do colors, will test if it works)
-import java.io.BufferedReader;
 import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
