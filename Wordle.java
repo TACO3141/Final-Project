@@ -23,13 +23,13 @@ public class Wordle
 	*/
 	public Wordle()
 	{
-		File folder = new file("C:\\Users\\" + System.getProperty("user.name") + "\\Wordle"); // Object for folder of Wordle stats
+		File folder = new file("C:\\Users\\" + System.getProperty("user.name") + "\\Wordle"); // File object for folder of Wordle stats
 		File info = new File("C:\\Users\\" + System.getProperty("user.name") + "\\Wordle\\wordleStats.txt"); // Create a file object for stats document
 		boolean folderCreated;
 		boolean infoCreated;
 		try 
 		{
-			folderCreated = folder.mkdir(); // try and create folder, if folder didn't exist and was just created:
+			folderCreated = folder.mkdir(); // try to create folder. if folder didn't exist and was just created:
 			if (folderCreated)
 			{
 				try
@@ -55,11 +55,12 @@ public class Wordle
 		int lineNum = (int) Math.round((Math.random() * 14854) + 1.5);
 		try
 		{
-			File wordList = new File("wordList.txt"); 
-			Scanner wordFinder = new Scanner(wordList);
+			String temp = "";
+			File solutionsList = new File("validSolutions.txt"); 
+			Scanner wordFinder = new Scanner(solutionsList);
 			for (int i = 0; i < lineNum - 1; i++)
 			{
-				word = wordFinder.nextLine();
+				temp = wordFinder.nextLine();
 			}
 			word = wordFinder.nextLine();
 			wordFinder.close();
