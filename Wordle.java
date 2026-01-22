@@ -3,6 +3,8 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
 import java.time.Instant;
+import java.io.RandomAccessFile; // I could both read and write with this, but in testing I found it slow
+// for that reason I will use this for only writing; scanner does a good job at reading already
 
 public class Wordle
 {
@@ -25,7 +27,8 @@ public class Wordle
 	{
 		File folder = new file("C:\\Users\\" + System.getProperty("user.name") + "\\Wordle"); // File object for folder of Wordle stats
 		File info = new File("C:\\Users\\" + System.getProperty("user.name") + "\\Wordle\\wordleStats.txt"); // Create a file object for stats document
-		boolean folderCreated;
+		// You will notice an example wordleStats.txt file in this repo. This serves to show the formatting of the file and what info will be stored
+		boolean folderCreated; // these two tell us if the folder and info were created properly
 		boolean infoCreated;
 		try 
 		{
@@ -36,9 +39,9 @@ public class Wordle
 				{
 					infoCreated = info.createNewFile();
 					System.out.println("Welcome to wordle! This is your first game. Lets go!"); // Create a new info file and welcome the user
-					// write to file
+					// write info
 				}
-				catch (Exception e) // Generic exception catch, likely a security exception so we ask for run as admin
+				catch (Exception e) // Generic exception catch, likely a security exception so we ask for run as admin. If it doesn't work after that then we may be cooked
 				{
 					System.out.println("Sorry, an error occured. Please try running the program again. If that doesn\'t work, reinstall the program and try running as administrator.");
 				}
