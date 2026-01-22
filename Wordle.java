@@ -71,6 +71,7 @@ public class Wordle
 		}
 		
 		}
+		// remember to make the guess only use guessList file!
 		public String guess()
 		{
 		
