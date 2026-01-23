@@ -1,10 +1,9 @@
 // keeping this here: 🟩🟨⬛ (1 possible way to do colors, will test if it works)
-import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
 import java.time.Instant;
-import java.io.RandomAccessFile; // I could both read and write with this, but in testing I found it slow
-// for that reason I will use this for only writing; scanner does a good job at reading already
+import java.util.Arrays;
+import java.io.RandomAccessFile; // more convenient to use this for both reading and writing instead of having scanner
 
 public class Wordle
 {
@@ -39,7 +38,10 @@ public class Wordle
 				{
 					infoCreated = info.createNewFile();
 					System.out.println("Welcome to wordle! This is your first game. Lets go!"); // Create a new info file and welcome the user
-					// write info
+					RandomAccessFile infoManager = new RandomAccessFile(info, "rw"); // This will let us manage the file, hence the name "info manager"; It manages info
+					infoWriter.writeBytes("\n\n\n\n\n\n\n\n\n\n\n\n"); // Create the total amount of lines we will be using in the file.
+					infoWriter.seek(0); // Very start of file
+					infoWriter.writeBytes("currentGame false\n{\nsecretWord 12345\nguesses 0\n{\n\n\n\n\n\n}\ntimeLast 0000000000000\n}\n time 0000000000000\nstreak 0"); // write template.
 				}
 				catch (Exception e) // Generic exception catch, likely a security exception so we ask for run as admin. If it doesn't work after that then we may be cooked
 				{
@@ -60,13 +62,13 @@ public class Wordle
 		{
 			String temp = "";
 			File solutionsList = new File("validSolutions.txt"); 
-			Scanner wordFinder = new Scanner(solutionsList);
+			RandomAccessFile wordPicker = new RandomAccessFile(solutionsList, "r");
 			for (int i = 0; i < lineNum - 1; i++)
 			{
-				temp = wordFinder.nextLine();
+				temp = wordPicker.readLine();
 			}
-			word = wordFinder.nextLine();
-			wordFinder.close();
+			word = wordPicker.readLine();
+			wordPicker.close();
 		}
 		catch (Exception e)
 		{
