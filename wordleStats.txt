@@ -1,13 +1,15 @@
 currentGame true
 {
 secretWord scrambledword
-guesses 3
+guesses 5
 {
 1 guess
 2 guess
 3 guess
+4 guess
+5 guess
 }
-timeLast 123:456:789
+timeLast 13chars
 }
-time 123:456:789
+time 13chars
 streak 0
