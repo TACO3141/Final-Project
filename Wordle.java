@@ -57,19 +57,18 @@ public class Wordle
 		time = Instant.now(); // Save the time, we'll store it in a file soon
 		// time.getLong(ChronoField.INSTANT_SECONDS);
 		
-		int lineNum = (int) Math.round((Math.random() * 14854) + 1.5);
+		int lineNum = (int) Math.round((Math.random() * 2281) + 1.5); // Get a random linenumber for the word
 		try
 		{
 			String temp = "";
-			File solutionsList = new File("validSolutions.txt"); 
-			RandomAccessFile wordPicker = new RandomAccessFile(solutionsList, "r");
+			File solutionsList = new File("validSolutions.txt"); // Create the file object for handling
+			RandomAccessFile wordPicker = new RandomAccessFile(solutionsList, "r"); // Create the reader object (a RandomAccessFile object)
 			for (int i = 0; i < lineNum - 1; i++)
 			{
-				temp = wordPicker.readLine();
+				temp = wordPicker.readLine(); // navigate to the line we want
 			}
-			word = wordPicker.readLine();
-			wordPicker.close();
-		}
+			word = wordPicker.readLine(); // get the word and store it.
+			wordPicker.close(); // close 
 		catch (Exception e)
 		{
 			System.out.println("Sorry, an error occured. Please try running the program again. If that doesn\'t work, reinstall the program and try running as administrator.");
